@@ -2,7 +2,7 @@ const express = require("express");
 const { createinfo } = require("./types");
 const app = express();
 app.use(express.json());
-function bodyFatCalc(createdetail){
+function bodyFatCalc(createdetail){ 
     // for men
     if (createdetail.gender){
         return 495 / (1.0324 - 0.19077 * (Math.log(createdetail.waist - createdetail.neck) / Math.LN10) + 0.15456 * (Math.log(createdetail.height) / Math.LN10))- 450
@@ -24,15 +24,7 @@ app.post("/bodyFatCalc", async function(req, res){
          return;
     }
     
-     await info.create({
-
-            gender:createdetail.gender,
-            age:createdetail.age,
-            height:createdetail.height,
-            neck:createdetail.neck ,
-            waist:createdetail.waist
-         })
-        const result = bodyFatCalc(createdetail)
+        const result = bodyFatCalc(createdetail);
     res.json({
          result
     })
