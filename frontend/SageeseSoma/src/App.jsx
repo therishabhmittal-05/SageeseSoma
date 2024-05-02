@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Cards from "./Cards.jsx"
 
 
 function App() {
@@ -6,8 +7,8 @@ function App() {
 
   return (
     <>
-    <div>hi</div>
-  
+    
+    <Cards/>
     </>
   )
 }
