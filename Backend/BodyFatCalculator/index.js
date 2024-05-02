@@ -2,6 +2,7 @@ const express = require("express");
 const { createinfo } = require("./types");
 const app = express();
 app.use(express.json());
+
 function bodyFatCalc(createdetail){ 
     // for men
     if (createdetail.gender){
