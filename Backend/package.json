@@ -4,7 +4,9 @@
   "description": "it is zod pacakage for bfc",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./BMI/main.js && node ./BodyFatCalculator/index.js",
+    "build": "npm install"
   },
   "author": "",
   "license": "ISC",
