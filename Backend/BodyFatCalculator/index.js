@@ -4,7 +4,7 @@ const app = express();
 app.use(express.json());
 function bodyFatCalc(createdetail){ 
     // for men
-    if (createdetail.gender){
+    if (createdetail.gender=="Male"){
         return 495 / (1.0324 - 0.19077 * (Math.log(createdetail.waist - createdetail.neck) / Math.LN10) + 0.15456 * (Math.log(createdetail.height) / Math.LN10))- 450
     }
     //for women

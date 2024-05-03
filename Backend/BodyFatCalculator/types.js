@@ -1,7 +1,7 @@
 const zod=require("zod");
 
 const createinfo=zod.object({
-    gender:zod.boolean(),
+    gender:zod.string(),
     age:zod.number(),
     height:zod.number(),
     neck: zod.number(), 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-const Cards = ({ onClear }) => {
+const Bfc = ({ onClear }) => {
     const [weight, setWeight] = useState('');
     const [weightUnit, setWeightUnit] = useState('kg');
     const [heightFeet, setHeightFeet] = useState('');
@@ -68,13 +68,13 @@ const Cards = ({ onClear }) => {
             <div>
                 <h2>Result</h2>
                 {bmiResult !== null && (
-                    <p>Your BMI is: <span style={{ backgroundColor: getBackgroundColor() }}>{bmiResult}</span></p>
+                    <p>Your BFC is: <span style={{ backgroundColor: getBackgroundColor() }}>{bmiResult}</span></p>
                 )}
                 <h3>BMI categories</h3>
                 <table className="w-full mt-5 border-collapse">
                     <thead>
                         <tr>
-                            <th className="bg-sky-500 border border-white p-2 text-white h-8 text-left">BMI</th>
+                            <th className="bg-sky-500 border border-white p-2 text-white h-8 text-left">Body Fat Calculator</th>
                             <th className="bg-sky-500 border border-white p-2 text-white h-8 text-left">Weight Status</th>
                         </tr>
                     </thead>
@@ -84,7 +84,7 @@ const Cards = ({ onClear }) => {
                             <td className="border border-white p-2 text-white h-8 text-left">UnderWeight</td>
                         </tr>
                         <tr>
-                            <td style={{ backgroundColor: bmiResult >= 18.5 && bmiResult <= 24.9 ? '#00FF00' : '' }}>18.5 - 24.9</td>
+                            <td style={{ backgroundColor: bmiResult >= 18.5 && bmiResult <= 24.9 ? '' : '' }}>18.5 - 24.9</td>
                             <td>Normal Weight</td>
                         </tr>
                         <tr>
@@ -106,7 +106,11 @@ const Cards = ({ onClear }) => {
     return (
         <div className="flex m-12 justify-around">
             <div className="bg-pink-700 p-8 border rounded-lg w-30vh h-auto mb-5 shadow-md">
-                <h2 className="mt-1">BMI Calculator</h2>
+                <h2 className="mt-1">Body Fat Calculator</h2>
+                <div>
+                    <label className="mb-1 text-white block">Gender</label>
+                    <input type="dropDown" />
+                </div>
                 <div className="mb-4">
                     <label className="mb-1 text-white block">Weight: </label>
                     <input type="number"
@@ -146,4 +150,4 @@ const Cards = ({ onClear }) => {
     );
 };
 
-export default Cards;
+export default Bfc;
