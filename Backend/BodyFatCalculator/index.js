@@ -15,7 +15,7 @@ function bodyFatCalc(gender, age, height, neck, waist){
 
     }
 }
-app.post("/bodyFatCalc", async function(req, res){
+app.post("/bfc",  function(req, res){
     const {gender, age, height, neck, waist}= req.body;
 //  const parseddetail = createinfo.safeParse(createdetail);
 
