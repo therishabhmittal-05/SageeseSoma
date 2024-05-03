@@ -91,7 +91,7 @@ const BodyFat = ({ onClear }) => {
     return (
         <div className="flex m-12 justify-around">
             <div className="bg-pink-700 p-8 border rounded-lg w-30vh h-auto mb-5 shadow-md">
-                <h2 className="mt-1">Body Fat Calculator</h2>
+                <h2 className="mt-1 text-2xl">Body Fat Calculator</h2>
                 <div>
                     <label className="mb-1 text-white block">Gender</label>
                     <select id="gender" value={selectedGender} onChange={handleGenderChange} className="w-auto p-3 border border-white rounded mt-1 mb-2.5 box-border">
