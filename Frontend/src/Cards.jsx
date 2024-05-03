@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 const Cards = ({ onClear }) => {
     const [weight, setWeight] = useState('');
     const [weightUnit, setWeightUnit] = useState('kg');
@@ -87,6 +88,8 @@ const Cards = ({ onClear }) => {
                     </tbody>
                 </table>
             </div>
+         
+            
         );
     };
 
@@ -125,7 +128,7 @@ const Cards = ({ onClear }) => {
                         disabled={heightUnit === 'cm'} />
                 </div>
                 <button className="bg-sky-500 text-white p-2.5 border rounded cursor-pointer hover:bg-sky-700" onClick={handleClear}>Clear</button> &nbsp;
-                <button onClick={handleCalculate}>Calculate</button>
+                <button className="bg-sky-500 text-white p-2.5 border rounded cursor-pointer hover:bg-sky-700" onClick={handleCalculate}>Calculate</button>
             </div>
             <div className="card2">
                 {renderResult()}
