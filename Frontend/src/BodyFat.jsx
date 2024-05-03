@@ -66,7 +66,7 @@ const BodyFat = ({ onClear }) => {
         };
 
         if (!isNaN(weightInKg) && !isNaN(heightInMeters) && selectedGender && !isNaN(data.age) && !isNaN(data.neck) && !isNaN(data.waist)) {
-            axios.post('http://localhost:3000/bodyfat', data)
+            axios.post('https://sageesesoma.onrender.com/bodyFatCalc', data)
             .then((response)=>{
                 console.log(response.data);
                 setBfcResult(response.data.bodyFatPercentage);

@@ -1,12 +1,12 @@
 const express = require("express");
-const { createinfo } = require("./types");
+// const { createinfo } = require("./types");
 const app = express();
 const cors = require('cors')
 app.use(cors())
 app.use(express.json());
 function bodyFatCalc(createdetail){ 
     // for men
-    if (createdetail.gender=="Male"){
+    if (gender=="Male"){
         return 495 / (1.0324 - 0.19077 * (Math.log(createdetail.waist - createdetail.neck) / Math.LN10) + 0.15456 * (Math.log(createdetail.height) / Math.LN10))- 450
     }
     //for women
@@ -16,8 +16,8 @@ function bodyFatCalc(createdetail){
     }
 }
 app.post("/bodyFatCalc", async function(req, res){
-    const createdetail= req.body;
- const parseddetail = createinfo.safeParse(createdetail);
+    const {gender, age, height, neck, waist}= req.body;
+//  const parseddetail = createinfo.safeParse(createdetail);
 
      if (!parseddetail.success) {
          res.status(411).json({
