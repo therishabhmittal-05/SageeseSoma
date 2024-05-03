@@ -118,12 +118,14 @@ const Cards = ({ onClear }) => {
                     </select>
                 </div>
                 <div className="input-container">
-                    <label >Height:</label>
+                    <label className="mb-1 text-white block">Height:</label>
                     <input type="number"
                         value={heightFeet}
-                        onChange={(e) => setHeightFeet(e.target.value)} />
+                        onChange={(e) => setHeightFeet(e.target.value)}
+                        className="w-auto p-3 border border-white rounded mt-1 mb-2.5 box-border" />
                     <select value={heightUnit} onChange={(e) => {
                         setHeightUnit(e.target.value);
+                        className="w-auto p-2.5 border border-gray-300 rounded box-border mt-1 mb-2.5 mx-2.5"
                         if (e.target.value === 'cm') {
                             setHeightInches('');
                         }
@@ -135,7 +137,7 @@ const Cards = ({ onClear }) => {
                 
                 <button className="bg-sky-500 text-white p-2.5 border rounded cursor-pointer hover:bg-sky-700" onClick={handleClear}>Clear</button> &nbsp;
                 <button className="bg-sky-500 text-white p-2.5 border rounded cursor-pointer hover:bg-sky-700" onClick={handleCalculate}>Calculate</button>
-                <button className="bg-sky-500 text-white p-2.5 border rounded cursor-pointer hover:bg-sky-700" onClick={handleCalculate}>Calculate</button>
+
             </div>
             <div className="card2">
                 {renderResult()}
