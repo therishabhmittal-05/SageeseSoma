@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Cards from "./Cards.jsx"
+import Bfc from "./BodyFat.jsx"
 
 
 
@@ -9,7 +10,7 @@ function App() {
   return (
     <>
      <Cards/>
-     
+     <Bfc/>
 
     </>
   )

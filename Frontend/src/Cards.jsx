@@ -114,23 +114,25 @@ const Cards = ({ onClear }) => {
                         onChange={(e) => setWeight(e.target.value)} className="w-auto p-3 border border-white rounded mt-1 mb-2.5 box-border" />
                     <select value={weightUnit} onChange={(e) => setWeightUnit(e.target.value)} className="w-auto p-2.5 border border-gray-300 rounded box-border mt-1 mb-2.5 mx-2.5">
                         <option value="kg">kg</option>
+                        <option value="pounds">pounds</option>
                         
                     </select>
                 </div>
-                <div className="input-container">
+                <div className="mb-4">
                     <label className="mb-1 text-white block">Height:</label>
                     <input type="number"
                         value={heightFeet}
                         onChange={(e) => setHeightFeet(e.target.value)}
                         className="w-auto p-3 border border-white rounded mt-1 mb-2.5 box-border" />
-                    <select value={heightUnit} onChange={(e) => {
+                    <select value={heightUnit} className="w-auto p-2.5 border border-gray-300 rounded box-border mt-1 mb-2.5 mx-2.5" onChange={(e) => {
                         setHeightUnit(e.target.value);
-                        className="w-auto p-2.5 border border-gray-300 rounded box-border mt-1 mb-2.5 mx-2.5"
+                        
                         if (e.target.value === 'cm') {
                             setHeightInches('');
                         }
                     }}>
                         <option value="cm">cm</option>
+                        <option value="feet">feet</option>
                         
                     </select>
                 </div>
