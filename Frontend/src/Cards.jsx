@@ -40,7 +40,7 @@ const Cards = ({ onClear }) => {
         };
 
         if (!isNaN(weightInKg) && !isNaN(heightInMeters)) {
-            axios.post('http://localhost:3000/bmi', data)
+            axios.post('https://sageesesoma.onrender.com/bmi', data)
             .then((response)=>{
                 console.log(response.data);
                 setBmiResult(response.data.bmi);
