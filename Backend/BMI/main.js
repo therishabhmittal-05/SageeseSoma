@@ -18,6 +18,12 @@ app.post('/bmi', (req, res)=>{
         res.json({bmi: bmi, category: 'Obese'})
     }   
 })
+app.get("/", (req, res)=>{
+    res.sendStatus(200).json({
+        message: "Welcome, SageeseSoma",
+        usecase: "Use our Api for calculating Bmi and Bfc"
+    })
+})
 
 
 
