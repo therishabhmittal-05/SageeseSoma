@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import axios from "axios";
 const Cards = ({ onClear }) => {
     const [weight, setWeight] = useState('');
     const [weightUnit, setWeightUnit] = useState('kg');
@@ -34,10 +34,21 @@ const Cards = ({ onClear }) => {
         } else if (heightUnit === 'feet') {
             heightInMeters = (parseFloat(heightFeet) * 0.3048) + (parseFloat(heightInches) * 0.0254);
         }
+        const data = {
+            weight: weightInKg,
+            height: heightInMeters
+        };
 
         if (!isNaN(weightInKg) && !isNaN(heightInMeters)) {
-            const bmi = weightInKg / Math.pow(heightInMeters, 2);
-            setBmiResult(bmi.toFixed(2));
+            axios.post('http://localhost:3000/bmi', data)
+            .then((response)=>{
+                console.log(response.data);
+                setBmiResult(response.data.bmi);
+            
+            })
+            .catch((error)=>{
+                console.log(error);
+            });
         }
     };
 
@@ -101,7 +112,7 @@ const Cards = ({ onClear }) => {
                         onChange={(e) => setWeight(e.target.value)} className="w-auto p-3 border border-white rounded mt-1 mb-2.5 box-border" />
                     <select value={weightUnit} onChange={(e) => setWeightUnit(e.target.value)} className="w-auto p-2.5 border border-gray-300 rounded box-border mt-1 mb-2.5 mx-2.5">
                         <option value="kg">kg</option>
-                        <option value="pounds">pounds</option>
+                        
                     </select>
                 </div>
                 <div className="input-container">
@@ -116,16 +127,12 @@ const Cards = ({ onClear }) => {
                         }
                     }}>
                         <option value="cm">cm</option>
-                        <option value="feet">feet</option>
+                        
                     </select>
                 </div>
-                <div className="input-container">
-                    <label>Height(inches):</label>
-                    <input type="number" value={heightInches} onChange={(e) => setHeightInches(e.target.value)}
-                        disabled={heightUnit === 'cm'} />
-                </div>
+                
                 <button className="bg-sky-500 text-white p-2.5 border rounded cursor-pointer hover:bg-sky-700" onClick={handleClear}>Clear</button> &nbsp;
-                <button onClick={handleCalculate}>Calculate</button>
+                <button className="bg-sky-500 text-white p-2.5 border rounded cursor-pointer hover:bg-sky-700" onClick={handleCalculate}>Calculate</button>
             </div>
             <div className="card2">
                 {renderResult()}
