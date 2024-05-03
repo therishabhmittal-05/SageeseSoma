@@ -36,7 +36,7 @@ const Cards = ({ onClear }) => {
             heightInMeters = (parseFloat(heightFeet) * 0.3048) + (parseFloat(heightInches) * 0.0254);
         }
 
-        if (!isNaN(weightInKg) && !isNaN(heightInMeters)) {
+        if (!isNaN(weightInKg) && !isNaNgit (heightInMeters)) {
             const bmi = weightInKg / Math.pow(heightInMeters, 2);
             setBmiResult(bmi.toFixed(2));
         }
