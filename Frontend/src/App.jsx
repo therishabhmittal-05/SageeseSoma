@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Cards from "./Cards.jsx"
 import Bfc from "./BodyFat.jsx"
-
+import FoodAI from "./FoodAI.jsx"
 
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
           
           <Route path="/bmi" element={<Cards />} />
           <Route path="/bfc" element={<Bfc />} />
+          <Route path="/foodAI" element={<FoodAI />} />
        
        
       </Routes>
